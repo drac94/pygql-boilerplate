@@ -21,8 +21,7 @@ class CreatePost(graphene.Mutation):
     def mutate(self, info: ResolveInfo, post_data: Dict[str, Any]) -> Any:
 
         new_post = PostService(info.context.get("session")).create(
-            title=post_data["title"],
-            content=post_data["content"],
+            title=post_data["title"], content=post_data["content"]
         )
 
         return CreatePost(new_post)
@@ -39,9 +38,7 @@ class UpdatePost(graphene.Mutation):
     def mutate(self, info: ResolveInfo, id: str, title: str, content: str) -> Any:
 
         updated_post = PostService(info.context.get("session")).update(
-            id=id,
-            title=title,
-            content=content,
+            id=id, title=title, content=content
         )
 
         return UpdatePost(updated_post)

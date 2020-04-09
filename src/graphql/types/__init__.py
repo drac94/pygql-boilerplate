@@ -1,3 +1,3 @@
 from .post import PostType
 
-__all__ = ("PostType")
+__all__ = "PostType"

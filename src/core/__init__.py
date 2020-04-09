@@ -1,3 +1,3 @@
 from .post import PostService
 
-__all__ = ("PostService")
+__all__ = "PostService"

@@ -11,4 +11,3 @@ class Post(BaseModel):
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid4)
     title = Column(String(255))
     content = Column(Text)
-
