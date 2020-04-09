@@ -1,0 +1,8 @@
+/.coverage
+/.env
+/.mypy_cache/
+/.pytest_cache/
+/.html-cov-report/
+/.venv
+/coverage/
+__pycache__
