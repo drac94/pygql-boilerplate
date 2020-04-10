@@ -42,7 +42,7 @@ mutation{
 ### Getting All Posts 
 ```
 query {
-  post {
+  allPosts {
     id
     title
     content

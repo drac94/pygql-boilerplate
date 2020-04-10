@@ -8,7 +8,7 @@ from src.graphql.types import PostType
 
 
 class PostQuery(graphene.ObjectType):
-    post = graphene.List(graphene.NonNull(PostType), required=True)
+    all_posts = graphene.List(graphene.NonNull(PostType), required=True)
 
-    def resolve_post(self, info: ResolveInfo) -> List[PostType]:
+    def resolve_all_posts(self, info: ResolveInfo) -> List[PostType]:
         return PostService(info.context.get("session")).get_list()
