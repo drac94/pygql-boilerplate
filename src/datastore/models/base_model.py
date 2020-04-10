@@ -1,5 +1,4 @@
-from sqlalchemy import Column, DateTime, inspect
-from sqlalchemy.dialects.postgresql import UUID
+from sqlalchemy import Column, DateTime
 from sqlalchemy.ext.declarative import declarative_base
 from src.datastore.func import utcnow
 

@@ -12,7 +12,7 @@ def get_session() -> Type[Session]:
     global session_class
 
     if not session_class:
-        engine = create_engine("postgresql+psycopg2://user@host/dbname")
+        engine = create_engine("postgresql+psycopg2://user@host/pygql")
         session_factory = sessionmaker(bind=engine, autocommit=True)
         session_class = scoped_session(session_factory)
 

@@ -1,7 +1,7 @@
 #! usr/bin/python
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template
+from flask import Flask
 from flask_cors import CORS
 from flask_graphql import GraphQLView
 from src.graphql.schema import schema

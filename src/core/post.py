@@ -1,11 +1,8 @@
-from typing import Dict, List, Optional
+from typing import List, Optional
 from uuid import uuid4
 
-from sqlalchemy import asc, desc
 from sqlalchemy.orm.session import Session
 from src.datastore.models import Post
-
-from dateutil.relativedelta import relativedelta
 
 
 class PostService(object):

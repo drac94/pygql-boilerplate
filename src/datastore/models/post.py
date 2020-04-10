@@ -3,7 +3,6 @@ from uuid import uuid4
 from sqlalchemy import Column, Text, String
 from sqlalchemy.dialects.postgresql import UUID
 from src.datastore.models.base_model import BaseModel
-from sqlalchemy.orm import relationship
 
 
 class Post(BaseModel):
