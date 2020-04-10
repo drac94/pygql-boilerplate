@@ -26,7 +26,7 @@ dbstore.py
 
 ```
 ## Testing GraphQL
-Go to http://localhost:5000/graphql to try GraphQL. Below are the example queries for adding a new user, getting all users, searching for a user with username and updating username with email id.
+Go to http://localhost:5000/graphql to try GraphQL. Below are the example queries for adding a new post, getting all posts and updating a post.
 ### Adding a New Post
 ```
 mutation{
