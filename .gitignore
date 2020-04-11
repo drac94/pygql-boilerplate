@@ -1,5 +1,6 @@
 /.coverage
 /.env
+/.env.test
 /.mypy_cache/
 /.pytest_cache/
 /.html-cov-report/
