@@ -18,12 +18,8 @@ Go to the root dir and run the below line in the terminal.
 pipenv run dev
 ```
 ## Creating a Database
-Create a new postgres database with the table structure mentioned in *pygql.sql* and update the database name in *datastore/dbstore.py* file.
-```
-dbstore.py
+Create a new postgres database with the table structure mentioned in *pygql.sql*, create an `.env` file and set the database name, user, host and password
 
-# Replace "postgresql+psycopg2://user@host/dbname" with your path to database
-```
 ## Testing GraphQL
 Go to http://localhost:5000/graphql to try GraphQL. Below are the example queries for adding a new post, getting all posts and updating a post.
 ### Adding a New Post
@@ -77,7 +73,14 @@ mutation{
 }
 ```
 
-## Useful Scripts
+## Unit Tests
+To run the unit tets you need to create an empty database and an env file called `.env.test` with the same variables as the `.env` file, then add the name of your test database to the env file and run the command
+
+```
+pipenv run test
+```
+
+## Other Scripts
 ### Format Code
 ```
 pipenv run format
