@@ -5,9 +5,9 @@ verify_ssl = true
 
 [dev-packages]
 mypy = "==0.720"
-flake8 = "==3.7.8"
-black = "==18.6b4"
 pytest = "==5.1.2"
+flake8 = "*"
+black = "*"
 
 [packages]
 "psycopg2-binary" = "==2.*"
@@ -29,8 +29,11 @@ factory-boy = "*"
 python_version = "3.7"
 
 [scripts]
-format = "black --py36 ."
+format = "black --target-version py36 ."
 lint = "flake8 ."
 dev = "python app.py"
 typecheck = "mypy ."
 test = "./scripts/test.sh"
+
+[pipenv]
+allow_prereleases = true

@@ -9,9 +9,9 @@ def test_list_posts_should_be_successful(
 ) -> None:
     PostFactory.create_batch(5)
 
-    query = "{allPosts {id title}}"
+    query = "{posts {id title}}"
     context = {"session": pg_session}
     result = schema.execute(query, context=context)
 
     assert not result.errors
-    assert len(result.data["allPosts"]) == 5
+    assert len(result.data["posts"]) == 5

@@ -50,7 +50,7 @@ pipenv run dev
 [⇧ back to top](#table-of-contents)
 
 ## Testing GraphQL
-Go to http://localhost:5000/graphql to try GraphQL. Below are the example queries for adding a new post, getting all posts, updating and deleting a post.
+Go to http://localhost:5000/graphql to try GraphQL. Below are the example queries for adding a new post, getting all posts, getting, updating and deleting a post.
 ### Adding a New Post
 ```
 mutation{
@@ -65,8 +65,21 @@ mutation{
 ```
 ### Getting All Posts 
 ```
-query {
-  allPosts {
+{
+  posts {
+    id
+    title
+    content
+    createdAt
+    updatedAt
+  }
+}
+```
+
+### Getting a Post by ID
+```
+{
+  post(id:"uuid") {
     id
     title
     content
