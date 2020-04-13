@@ -29,9 +29,9 @@ def pg_scoped_session() -> Generator[Session, None, None]:
 
 @fixture
 def pg_session(pg_scoped_session: Session) -> Generator[Session, None, None]:
-    """Initiate a nested transaction before each test function"""
+    """Initiate a transaction before each test function"""
 
-    # pg_scoped_session.begin_nested()
+    pg_scoped_session.begin()
 
     try:
         yield pg_scoped_session
