@@ -29,7 +29,7 @@ pip install pipenv
 
 ### Install project dependencies
 ```
-pipenv install
+pipenv install --dev
 ```
 The previous command will create a virtualenv and install the dependencies inside
 
@@ -119,6 +119,8 @@ mutation{
 
 ## Unit Tests
 To run the unit tets, create an empty database, duplicate the `.env` file and rename it to `.env.test`, then replace the POSTGRES_DB variable with the name of your test database.
+
+> IMPORTANT: Running the test command without doing the previous step or running pytest standalone will clear your main database.
 
 Now, run the next command
 ```
