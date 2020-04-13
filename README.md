@@ -6,22 +6,25 @@ This is a boilerplate project for creating a GraphQL API using Flask, PostgreSQL
 ```
 pip install pipenv
 ```
-### Install the project dependencies
-The next command will create a virtualenv and install the dependencies inside
+
+### Install project dependencies
 ```
 pipenv install
 ```
+The previous command will create a virtualenv and install the dependencies inside
+
+## Creating a Database
+Create a new postgres database with the table structure mentioned in **pygql.sql**, then, create an `.env` file following the `.env.example`  and set the name, user, host and password of your database.
+
 
 ## Running Flask Server
 Go to the root dir and run the below line in the terminal.
 ```
 pipenv run dev
 ```
-## Creating a Database
-Create a new postgres database with the table structure mentioned in *pygql.sql*, create an `.env` file and set the database name, user, host and password
 
 ## Testing GraphQL
-Go to http://localhost:5000/graphql to try GraphQL. Below are the example queries for adding a new post, getting all posts and updating a post.
+Go to http://localhost:5000/graphql to try GraphQL. Below are the example queries for adding a new post, getting all posts, updating and deleting a post.
 ### Adding a New Post
 ```
 mutation{
@@ -50,7 +53,7 @@ query {
 ### Updating a Post
 ```
 mutation{
-  updatePost(id:"str", title:"new title", content:"new content") {
+  updatePost(id:"uuid", title:"new title", content:"new content") {
     post {
       id
       title
@@ -63,7 +66,7 @@ mutation{
 ### Deleting a Post
 ```
 mutation{
-  deletePost(id:"str") {
+  deletePost(id:"uuid") {
     post {
       id
       title
@@ -74,8 +77,9 @@ mutation{
 ```
 
 ## Unit Tests
-To run the unit tets you need to create an empty database and an env file called `.env.test` with the same variables as the `.env` file, then add the name of your test database to the env file and run the command
+To run the unit tets, create an empty database, duplicate the `.env` file and rename it to `.env.test`, then replace the POSTGRES_DB variable with the name of your test database.
 
+Now, run the next command
 ```
 pipenv run test
 ```
